@@ -1,0 +1,3 @@
+[submodule "HailowAuthService"]
+	path = HailowAuthService
+	url = git@github.com:Blackflame796/HailowAuthService.git
