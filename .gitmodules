@@ -7,3 +7,6 @@
 [submodule "HailowProductService"]
 	path = HailowProductService
 	url = https://github.com/Blackflame796/HailowProductService.git
+[submodule "HailowPaymentService"]
+	path = HailowPaymentService
+	url = https://github.com/Blackflame796/HailowPaymentService.git
