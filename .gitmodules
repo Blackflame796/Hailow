@@ -1,6 +1,6 @@
 [submodule "HailowAuthService"]
 	path = HailowAuthService
-	url = git@github.com:Blackflame796/HailowAuthService.git
+	url = https://github.com/Blackflame796/HailowAuthService.git
 [submodule "HailowApiGateway"]
 	path = HailowApiGateway
 	url = https://github.com/SpeeDark/HailowApiGateway.git
