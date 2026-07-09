@@ -4,3 +4,6 @@
 [submodule "HailowApiGateway"]
 	path = HailowApiGateway
 	url = https://github.com/SpeeDark/HailowApiGateway.git
+[submodule "HailowProductService"]
+	path = HailowProductService
+	url = https://github.com/Blackflame796/HailowProductService.git
