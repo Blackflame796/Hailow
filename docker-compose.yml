@@ -1,0 +1,54 @@
+version: '3.9'
+
+services:
+  # RabbitMQ
+  rabbitmq:
+    image: rabbitmq:4.3-management-alpine
+    container_name: hailow-rabbitmq
+    ports:
+      - "5672:5672"   # AMQP
+      - "15672:15672" # Management UI
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_running"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - hailow-network
+
+  # PostgreSQL (для будущего)
+  postgres:
+    image: postgres:16-alpine
+    container_name: hailow-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: hailow
+      POSTGRES_PASSWORD: hailow123
+      POSTGRES_DB: hailow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - hailow-network
+
+  # Redis (для корзины)
+  redis:
+    image: redis:7-alpine
+    container_name: hailow-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - hailow-network
+
+volumes:
+  rabbitmq_data:
+  postgres_data:
+  redis_data:
+
+networks:
+  hailow-network:
+    driver: bridge
